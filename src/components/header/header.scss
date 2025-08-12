@@ -1,0 +1,35 @@
+.header {
+  text-align: center;
+  padding-block-start: 0.5rem;
+
+  &__desc {
+    color: #64748b;
+    font-size: rem(13);
+
+    @include media('>=tablet') {
+      font-size: rem(16);
+    }
+  }
+
+  &__scoreboard {
+    padding-block-start: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0 1rem;
+
+    .score,
+    .best {
+      background-color: #1e293b;
+      padding: 4px 8px;
+      border-radius: 0.5rem;
+    }
+
+    .score {
+      color: #a855f7;
+    }
+
+    .best {
+      color: #fbbf24;
+    }
+  }
+}

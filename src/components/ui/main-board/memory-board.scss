@@ -1,0 +1,24 @@
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: center;
+  place-content: center;
+  margin-inline: auto;
+  max-width: 1080px;
+  margin-block-start: 2rem;
+  gap: 1rem;
+
+  @include media('>=xsmall') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media('>=tablet') {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem 0;
+  }
+
+  @include media('>=desktop') {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

@@ -1,0 +1,41 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block-end: 1rem;
+  margin-block-start: 2rem;
+  font-size: rem(15);
+  color: $warning;
+  gap: rem(12);
+  width: 100%;
+
+  @include media('>=tablet') {
+    display: flex;
+    flex-direction: row;
+    gap: 0 8px;
+  }
+
+  p {
+    font-size: rem(13);
+
+    @include media('>=phone') {
+      font-size: rem(15);
+    }
+  }
+
+  button {
+    background-color: $card-matched;
+    padding: 8px;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    font-size: rem(13);
+    cursor: pointer;
+    transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+
+    &:hover {
+      opacity: 90%;
+    }
+  }
+}

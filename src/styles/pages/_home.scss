@@ -1,0 +1,6 @@
+@use '../utils/' as *;
+
+.memory-game {
+  margin-inline: auto;
+  width: min(100% - rem(24), rem(1550));
+}
