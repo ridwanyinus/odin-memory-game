@@ -3,7 +3,7 @@
   padding-block-start: 0.5rem;
 
   &__desc {
-    color: #64748b;
+    color: $text-muted;
     font-size: rem(13);
 
     @include media('>=tablet') {
@@ -19,17 +19,17 @@
 
     .score,
     .best {
-      background-color: #1e293b;
+      background-color: $bg-secondary;
       padding: 4px 8px;
       border-radius: 0.5rem;
     }
 
     .score {
-      color: #a855f7;
+      color: $high-score;
     }
 
     .best {
-      color: #fbbf24;
+      color: $timer-text;
     }
   }
 }

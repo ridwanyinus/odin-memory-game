@@ -1,10 +1,3 @@
-const favorites = [
-{ id: 2, type: "manga" }, // Berserk
-{ id: 656, type: "manga" }, // Vagabond
-{ id: 59062, type: "anime" }, // gachi
-{ id: 2402, type: "anime" }, // Ashita no Joe
-];
-
 Berserk
 Vagabond
 Blue Lock
@@ -31,3 +24,5 @@ fullmetal alchemist brotherhood
 deathnote
 jujutsu kaisen
 Kingdom
+Pluto
+The Climber

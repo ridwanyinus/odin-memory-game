@@ -5,7 +5,7 @@ import { loadFromStorage, saveToStorage } from "./utils/localStorage";
 
 const App = () => {
 	const [gameRecord, setGameRecord] = useState(() =>
-		loadFromStorage("gameCount", { bestScore: 0, currentScore: 0 }),
+		loadFromStorage("gameRecord", { bestScore: 0, currentScore: 0 }),
 	);
 
 	useEffect(() => {

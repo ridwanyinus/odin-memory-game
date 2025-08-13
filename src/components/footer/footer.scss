@@ -25,7 +25,7 @@ footer {
   }
 
   button {
-    background-color: $card-matched;
+    background-color: $primary;
     padding: 8px;
     border-radius: 0.5rem;
     outline: none;
@@ -33,9 +33,60 @@ footer {
     font-size: rem(13);
     cursor: pointer;
     transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+    color: $text-primary;
 
-    &:hover {
+    &:hover:not(:focus) {
       opacity: 90%;
+    }
+
+    // Focus states for accessibility
+    &:focus {
+      outline: none;
+      border-color: $high-score; // #c084fc - light purple
+      box-shadow: 0 0 0 3px rgba(196, 132, 252, 0.3);
+      opacity: 100%;
+    }
+
+    // Hide focus ring for mouse users, show for keyboard users
+    &:focus:not(:focus-visible) {
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      border-color: $high-score; // #c084fc
+      box-shadow: 0 0 0 3px rgba(196, 132, 252, 0.3);
+      opacity: 100%;
+    }
+
+    // Active state (when pressed)
+    &:active {
+      opacity: 80%;
+      transform: translateY(1px);
+    }
+
+    // Disabled state
+    &:disabled {
+      background-color: $text-muted; // #94a3b8
+      color: $bg-tertiary; // #334155
+      cursor: not-allowed;
+      opacity: 60%;
+
+      &:hover,
+      &:focus {
+        opacity: 60%;
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    // Reduced motion support
+    @media (prefers-reduced-motion: reduce) {
+      transition: border-color 0.2s ease;
+
+      &:active {
+        transform: none;
+      }
     }
   }
 }

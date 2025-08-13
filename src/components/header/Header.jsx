@@ -3,9 +3,9 @@ import "./header.scss";
 const Header = ({ record }) => {
 	return (
 		<header className="header">
-			<h1 className="header__title">Memory Game</h1>
+			<h1 className="header__title">Otaku Recall</h1>
 			<p className="header__desc">
-				Click each card only once. Cards shuffle after every click.
+				Don't click the same character twice. Cards remix after each click.
 			</p>
 			<div className="header__scoreboard">
 				<span className="score">

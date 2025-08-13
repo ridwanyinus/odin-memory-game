@@ -1,45 +1,92 @@
 .card {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  box-shadow: 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, $bg-primary, $bg-secondary);
+  box-shadow: 10px $card-shadow;
   width: 100%;
   height: auto;
   padding: 8px;
-  outline: none;
-  border: none;
+  border: 2px solid transparent;
   border-top-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  transition: 1s ease-in-out;
   clip-path: polygon(15px 0%, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0% 15px);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1);
   color: $text-primary;
   margin-inline: auto;
   gap: 0.5rem;
+  transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1), border-color 0.2s ease, box-shadow 0.2s ease;
 
   @include media('>=tablet') {
     width: max-content;
   }
 
-  &:hover {
+  // Hover state
+  &:hover:not(:focus) {
     transform: scale(1.02);
+  }
+
+  // Focus states for accessibility
+  &:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 10px $card-shadow, 0 0 0 3px rgba(0, 102, 204, 0.3);
+    transform: scale(1.02);
+  }
+
+  // Hide focus ring for mouse users, show for keyboard users
+  &:focus:not(:focus-visible) {
+    border-color: transparent;
+    box-shadow: 10px $card-shadow;
+  }
+
+  &:focus-visible {
+    border-color: #0066cc;
+    box-shadow: 10px $card-shadow, 0 0 0 3px rgba(0, 102, 204, 0.3);
+    transform: scale(1.02);
+  }
+
+  // Active state
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    transition: border-color 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      transform: none;
+    }
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    border: 2px solid;
+
+    &:focus,
+    &:focus-visible {
+      border-width: 3px;
+    }
   }
 
   .character-name {
     font-size: rem(10);
-    @include media('>=tablet') {
-      font-size: rem(13);
-    }
-    color: hsl(215, 16%, 55%);
+    color: $text-muted;
     max-width: 100px;
     text-align: center;
     text-wrap: wrap;
+
+    @include media('>=tablet') {
+      font-size: rem(13);
+    }
   }
 
   img {
+    border-radius: 4px;
+
     @include media('>=xsmall') {
       width: 80px;
       height: 80px;

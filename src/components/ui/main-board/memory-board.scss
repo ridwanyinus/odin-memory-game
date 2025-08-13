@@ -1,4 +1,4 @@
-.memory-board {
+.cards__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
@@ -7,6 +7,7 @@
   margin-inline: auto;
   max-width: 1080px;
   margin-block-start: 2rem;
+
   gap: 1rem;
 
   @include media('>=xsmall') {
@@ -20,5 +21,56 @@
 
   @include media('>=desktop') {
     grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.error--message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  background: linear-gradient(135deg, $danger, #ee5a24);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+  text-align: center;
+  color: white;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  button {
+    padding: 0.75rem 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+    }
   }
 }

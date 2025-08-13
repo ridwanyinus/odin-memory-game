@@ -8,7 +8,7 @@ const calcBreakPoints = (w) => {
 	return "xl";
 };
 
-const useBreakPoints = () => {
+export const useBreakPoints = () => {
 	const [breakPoints, setBreakPoints] = useState(
 		typeof window === "undefined" ? "lg" : calcBreakPoints(window.innerWidth),
 	);
@@ -23,5 +23,3 @@ const useBreakPoints = () => {
 
 	return breakPoints;
 };
-
-export default useBreakPoints;
