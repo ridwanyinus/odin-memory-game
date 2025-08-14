@@ -41,8 +41,8 @@ A React-based memory card game featuring characters from my favorite anime and m
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/otaku-recall.git
-cd otaku-recall
+git clone https://github.com/ridwanyinus/odin-memory-game.git
+cd odin-memory-game
 ```
 
 2. Install dependencies
